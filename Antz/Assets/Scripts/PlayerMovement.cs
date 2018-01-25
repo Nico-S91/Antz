@@ -16,11 +16,20 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 
         if (Input.GetKey(KeyCode.UpArrow)) {
-            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, speed);
+            playerRigidBody.velocity = new Vector2(0, speed);
         }
 
         if (Input.GetKey(KeyCode.DownArrow)) {
-            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, -speed);
+            playerRigidBody.velocity = new Vector2(0, -speed);
         }
+
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            playerRigidBody.velocity = new Vector2(-speed, 0);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow)) {
+            playerRigidBody.velocity = new Vector2(speed, 0);
+        }
+
 	}
 }
